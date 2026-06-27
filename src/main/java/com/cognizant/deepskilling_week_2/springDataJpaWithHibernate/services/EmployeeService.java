@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.List;
 
 @Service
 public class EmployeeService {
@@ -24,6 +25,11 @@ public class EmployeeService {
     @Transactional
     public void addEmployee(Employee employee){
         employeeRepository.save(employee);
+    }
+
+    @Transactional
+    public List<Employee> getAllPermanentEmployees() {
+        return employeeRepository.getAllPermanentEmployees();
     }
 
 

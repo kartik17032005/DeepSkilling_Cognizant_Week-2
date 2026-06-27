@@ -22,6 +22,7 @@ public class Department {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "department", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "department")
+    @ToString.Exclude
     private Set<Employee> employeeSet;
 }
